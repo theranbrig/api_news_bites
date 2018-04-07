@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////
 ////// Initial Variables
 
-//home url
+// Home URL
 let url =
     "https://newsapi.org/v2/top-headlines?country=us&apiKey=bb3e2cffda7d4f0c8f9b8c46c8bbd8ca";
 
@@ -12,7 +12,7 @@ const technology = document.querySelector("#technology");
 const sports = document.querySelector("#sports");
 const science = document.querySelector("#science");
 const entertainment = document.querySelector("#entertainment");
-const menu = document.getElementsByClassName("navLink");
+const menuItem = document.getElementsByClassName("navLink");
 const listSpace = document.querySelector("#listSpace");
 
 /////////////////////////////////////////////////
@@ -109,7 +109,7 @@ function createMeta() {
     metaDiv.className = "meta";
 }
 
-// create author
+// create story author
 function createName(story) {
     // create story author
     nameSpan = document.createElement("div");
@@ -160,58 +160,38 @@ function htmlConstruction() {
 ////// Button Functions
 
 // adds active class to menu items
-function changeActive(id) {
-    for (let i = 0; i < menu.length; i++) {
-        menu[i].classList = "yellow item navLink";
+function changeActiveClass(id) {
+    for (let i = 0; i < menuItem.length; i++) {
+        menuItem[i].classList = "yellow item navLink";
     }
-    id.classList = "yellow active item navLink";
+    event.target.classList = "yellow active item navLink";
 }
 
 // create url string for next category
 function createUrl(navId) {
-    let newsTopic = navId.innerText.toLowerCase();
+    let newsTopic = event.target.id.toString();
     if (newsTopic === "home") {
-        url =
-            "https://newsapi.org/v2/top-headlines?country=us&apiKey=bb3e2cffda7d4f0c8f9b8c46c8bbd8ca";
-    } else {
-        url =
-            "https://newsapi.org/v2/top-headlines?country=us&category=" +
-            newsTopic +
-            "&apiKey=bb3e2cffda7d4f0c8f9b8c46c8bbd8ca";
+        newsTopic = "";
     }
-    return url;
+    return (url =
+        "https://newsapi.org/v2/top-headlines?country=us&category=" +
+        newsTopic +
+        "&apiKey=bb3e2cffda7d4f0c8f9b8c46c8bbd8ca");
 }
 
 // function for grouping button events together
 function navButtonClick(buttonID) {
-    changeActive(buttonID);
+    changeActiveClass(buttonID);
     createUrl(buttonID);
     fetchArticles();
 }
 
 /////////////////////////////////////////////////
-////// Button Event Listeners
+////// Button Event Listener
 
-home.addEventListener("click", () => {
-    navButtonClick(home);
-});
-
-business.addEventListener("click", () => {
-    navButtonClick(business);
-});
-
-technology.addEventListener("click", () => {
-    navButtonClick(technology);
-});
-
-sports.addEventListener("click", () => {
-    navButtonClick(sports);
-});
-
-science.addEventListener("click", () => {
-    navButtonClick(science);
-});
-
-entertainment.addEventListener("click", () => {
-    navButtonClick(entertainment);
+document.addEventListener("click", event => {
+    if (event.target.classList.contains("navLink")) {
+        let buttonID = event.target.id;
+        navButtonClick(buttonID);
+    }
 });

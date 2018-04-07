@@ -15,11 +15,11 @@ The purpose of this assignment was to use an API for the first time and display 
 
 *   [1.0] 2017-04-05
 
--   Basic page built.
--   Built up Javascript function for fetch and click functions.
+    -   Basic page built.
+    -   Built up Javascript function for fetch and click functions.
 
 *   [1.1] 2017-04-07
 
--   Refactored functions for fetch and click.
--   Added Comments
--   Changed menu styling.
+    -   Refactored functions for fetch and click.
+    -   Added Comments
+    -   Changed menu styling.

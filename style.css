@@ -2,9 +2,10 @@ body {
     margin: 0 auto;
 }
 
-.ui.menu .active.item,
+.ui.inverted.menu .item,
+.ui.inverted.menu .item > a:not(.ui),
 .ui.inverted.segment {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: gray;
 }
 
 .ui.segment {

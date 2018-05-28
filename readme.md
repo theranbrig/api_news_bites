@@ -1,5 +1,7 @@
 # News Bites
 
+![Imgur](https://i.imgur.com/oBIjR9C.png?1)
+
 ## Assignment
 
 The purpose of this assignment was to use an API for the first time and display it on a page. I used the `fetch` method to make AJAX requests and built the site using HTML, CSS, and Vanilla JavaScript. I used [News API](https://newsapi.org) to get headlines from major news categories and the page can be updated and viewed easily. It was my first time using an API in conjunction with HTML. I plan on refactoring some of the code in the future, adding a search function, and making a few design tweeks along the way.
@@ -9,7 +11,8 @@ The purpose of this assignment was to use an API for the first time and display 
 *   HTML
 *   CSS
 *   JavaScript (Vanilla)
-*   Web API
+*   News API
+*   Semantic UI
 
 ## Changelog
 
